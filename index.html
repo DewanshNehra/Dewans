@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terminal</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon96.png">
+</head>
+<body>
+    <div id="preloader" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: black; display: flex; align-items: center; justify-content: center; z-index: 9999; font-family: 'Fira Code', monospace; ">
+        <span id="client" style="color: var(--ascii-art); font-size: 60px;"><ion-icon name="person"></ion-icon></span>
+
+        <span id="progress-bar" style="margin: 0 10px; color: white;"></span>
+        <span id="server" style="color:white; font-size: 60px;"><ion-icon name="terminal"></ion-icon></span>
+        <span style="color: var(--ascii-art); font-size: 150px;"><ion-icon name="skull" id="logging-in"></ion-icon></span>
+    </div>
+    <div id="terminal" class="terminalWindow">
+        <div class="topbar">
+            <button class="closebtn"></button>
+            <button class="closebtn1"></button>
+            <button class="closebtn2"></button>
+        </div>
+        <div class="terminal">
+            <div style="padding-bottom: 20px;" >
+                <div class="ascii-art">
+                    <pre>
+██████╗ ███████╗██╗    ██╗ █████╗ ███╗   ██╗███████╗    ███╗   ██╗███████╗██╗  ██╗██████╗  █████╗ 
+██╔══██╗██╔════╝██║    ██║██╔══██╗████╗  ██║██╔════╝    ████╗  ██║██╔════╝██║  ██║██╔══██╗██╔══██╗
+██║  ██║█████╗  ██║ █╗ ██║███████║██╔██╗ ██║███████╗    ██╔██╗ ██║█████╗  ███████║██████╔╝███████║
+██║  ██║██╔══╝  ██║███╗██║██╔══██║██║╚██╗██║╚════██║    ██║╚██╗██║██╔══╝  ██╔══██║██╔══██╗██╔══██║
+██████╔╝███████╗╚███╔███╔╝██║  ██║██║ ╚████║███████║    ██║ ╚████║███████╗██║  ██║██║  ██║██║  ██║
+╚═════╝ ╚══════╝ ╚══╝╚══╝ ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝    ╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝
+                    </pre>
+                    
+                </div>
+                <div style="color: var(--welcome-text);">Hi i am Dewans Nehra,</div>
+                <div id="welcome-message">Welcome to the terminal. Type <span class="highlight">'help'</span> to get started.</div>
+            </div>
+            <div id="output"></div>
+            
+            <div id="input-line" class="input-line">
+                <div class="prompt">
+                    <span class="user">guest</span><span class="symbol">@</span><span class="host">dewansnehra.xyz</span><span class="symbol">:</span><span class="symbol">$</span>
+                </div>
+                <div style="width: 85%;"><input class="cmdline" id="cmdline" autofocus spellcheck="false" autocomplete="off" /></div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="themes.js"></script>
+    <script src="commands.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

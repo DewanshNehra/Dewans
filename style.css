@@ -1,0 +1,283 @@
+
+:root {
+    --background : #0e1c1a;
+    --windowtopbar : #1d2929;
+    --terminal: #0e0f0f;
+    --ascii-art: #2AFFAD;
+    --welcome-text: #23F2FF;
+    --closebtn: #FF5151;
+    --closebtn1: #F7D674;
+    --closebtn2: #66DB7A;
+    --prompt: #FFFFFF;
+    --error: #f79292;
+    --prompt-user: #f79292;
+    --prompt-host: #f7d674;
+    --prompt-symbol: #66db7a;
+    --prompt-cmdline: #ffffff;
+}
+
+body {
+    background-color: var(--background);
+    padding: 20px;
+    font-family: 'Fira Code', monospace; /* Use 'Fira Code' font */
+}
+
+.terminalWindow {
+    border-radius: 10px;
+    color: #b7ecec; /* Brighter text color */
+    height: 90vh;
+    background-color: var(--terminal);
+}
+
+.terminal {
+    background-color: #0f1616; /* Darker shade for more contrast */
+    background-color: var(--terminal);
+    border-radius: 10px;
+    color: var(--ascii-art); /* Brighter text color */
+    padding: 30px;
+}
+
+.topbar {
+    background: var(--windowtopbar);
+    width: 100%;
+    height: 22px;
+    position: relative;
+    top: 0;
+    left: 0;
+    padding: 0px;
+    border-radius: 10px 10px 0 0;
+}
+
+.topbar:hover .closebtn {
+    display: block;
+}
+
+.topbar .closebtn  {
+    background: var(--closebtn);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    position: absolute;
+    top: 6px;
+    left: 20px;
+    /* display: none; */
+    border: none;
+}
+.closebtn2{
+    background: var(--closebtn2);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    position: absolute;
+    border: none;
+    top: 6px;
+    left: 60px;
+}
+.closebtn1{
+    background: var(--closebtn1);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    position: absolute;
+    border: none;
+    top: 6px;
+    left: 40px;
+}
+
+#welcome-message{
+    color: var(--welcome-text);
+}
+
+.ascii-art{
+    color: var(--ascii-art);   
+}
+
+.highlight {
+    text-shadow: 0 0 10px #66db7a;
+}
+
+.input-line {
+    display: flex;
+    
+}
+
+.prompt {
+    color: var(--prompt); /* Brighter color for more vibrancy */
+    margin-right: 5px;
+    text-shadow: 0 0 5px var(--prompt);
+    
+}
+
+.error{
+    color: var(--error);
+
+}
+
+.prompt .user{
+    color: var(--prompt-user);
+    text-shadow: 0 0 5px var(--prompt-user);
+}
+
+.prompt .host{
+    color: var(--prompt-host);
+    text-shadow: 0 0 5px var(--prompt-host);
+}
+.prompt .symbol{
+    color: var(--ascii-art);
+    text-shadow: 0 0 5px #66db7a;
+}
+
+.cmdline {
+    width: 100%;
+    color: var(--prompt-cmdline); /* Brighter color for more vibrancy */
+    font-family: 'Fira Code', monospace;
+    font-size: 16px;
+    background-color: #0f1616; /* Darker shade for more contrast */
+    border: none;
+    caret-color: var(--prompt-cmdline); /* Brighter color for more vibrancy */
+    outline: none;
+    animation: caretBlink 1s infinite; /* Add this to make the cursor blink */
+    background-color: var(--terminal);
+}
+
+/* Define the caret blink animation */
+@keyframes caretBlink {
+    0%, 100% {
+        caret-color: var(--prompt-cmdline);
+    }
+    50% {
+        caret-color: transparent;
+    }
+}
+
+.help {
+    color: var(--ascii-art);
+}
+
+.about {
+    color: var(--ascii-art);
+}
+
+.about a {
+    color: var(--prompt);
+}
+
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.blink {
+    animation: blink 0.5s infinite;
+}
+
+#logging-in {
+    display: none;
+    /* Add other styles as needed */
+}
+
+
+::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background-color: var(--background);
+    border-radius: 10px;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--ascii-art);
+    border-radius: 10px;
+  }
+  
+
+  #preloader{
+    font-size: 2em;
+  }
+
+/* Mobile styles */
+@media only screen and (max-width: 600px) {
+
+    .ascii-art{
+        font-size: 4px;
+    }
+
+    #preloader{
+        font-size: 1em;
+    }
+    
+    .terminalWindow {
+        height: 80vh;
+    }
+
+    .terminal {
+        padding: 15px;
+    }
+
+
+    .topbar {
+        height: 18px;
+    }
+
+    .closebtn, .closebtn1, .closebtn2 {
+        width: 10px;
+        height: 10px;
+    }
+
+    .cmdline {
+        font-size: 14px;
+    }
+}
+
+/* Tablet styles */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    .terminalWindow {
+        height: 85vh;
+    }
+
+    .terminal {
+        padding: 20px;
+    }
+
+    .topbar {
+        height: 20px;
+    }
+
+    .closebtn, .closebtn1, .closebtn2 {
+        width: 12px;
+        height: 12px;
+    }
+
+    .cmdline {
+        font-size: 16px;
+    }
+}
+
+/* Desktop styles */
+@media only screen and (min-width: 1025px) {
+    .terminalWindow {
+        height: 90vh;
+    }
+
+    .terminal {
+        padding: 30px;
+    }
+
+    .topbar {
+        height: 22px;
+    }
+
+    .closebtn, .closebtn1, .closebtn2 {
+        width: 12px;
+        height: 12px;
+    }
+
+    .cmdline {
+        font-size: 16px;
+    }
+}
